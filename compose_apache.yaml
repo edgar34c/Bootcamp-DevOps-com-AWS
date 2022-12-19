@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  apache:
+    image: httpd:lastest
+    container_name: apache-app
+    ports:
+      - "80:80"
+    volumes:
+      - /data/apache:/usr/local/apache2/htdocs/
+    networks:
+      - minha-rede
+
+networks: 
+  minha-rede:
+    driver: bridge
